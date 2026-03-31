@@ -48,11 +48,13 @@ While the baseline model achieved a slightly lower overall Mean Absolute Error (
 Our GAN successfully forces the prediction to maintain the dataset's natural variance, capturing the sharp drops of extreme traffic events that the baseline completely ignores.
 
 ### 1. Architectural Grid Search
-We evaluated 25 GAN combinations to locate the optimal feature extraction boundaries before recurrent memory starvation occurs. 
+We evaluated 25 GAN combinations to locate the optimal feature extraction boundaries before recurrent memory starvation occurs.
 
-![Grid Search Heatmap](25ganmatrix.jpeg)
+### 2. The Mean-Prediction Trap (Micro-Zoom)
+When viewing a macro 24-hour cycle, predictions look similar. However, isolating a severe micro-event (a rapid speed drop) reveals the baseline's critical failure. The baseline draws a smooth, safe curve through the crash, while our GAN accurately tracks the physical cliff.
 
-
+### 3. Preserving Physical Variance
+Under extreme 80% sensor failure, the baseline model's Standard Deviation Ratio collapses. Our GAN successfully resists this collapse, maintaining a highly realistic physical traffic distribution.
 ---
 
 ## Future Scope (Phase 2)
