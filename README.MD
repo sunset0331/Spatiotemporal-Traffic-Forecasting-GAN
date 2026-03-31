@@ -50,20 +50,8 @@ Our GAN successfully forces the prediction to maintain the dataset's natural var
 ### 1. Architectural Grid Search
 We evaluated 25 GAN combinations to locate the optimal feature extraction boundaries before recurrent memory starvation occurs. 
 
-![Grid Search Heatmap](path/to/your/heatmap_image.png)
-*(Replace `path/to/your/heatmap_image.png` with your actual file path. This heatmap shows the validation performance across the different depth/width configurations.)*
+![Grid Search Heatmap](25ganmatrix.jpeg)
 
-### 2. The Mean-Prediction Trap (Micro-Zoom)
-When viewing a macro 24-hour cycle, predictions look similar. However, isolating a severe micro-event (a rapid speed drop) reveals the baseline's critical failure. The baseline draws a smooth, safe curve through the crash, while our GAN accurately tracks the physical cliff.
-
-![Macro vs Micro Anomaly Plot](path/to/your/micro_zoom_graph.png)
-*(Replace with your graph showing the baseline smoothing vs the GAN's volatile prediction)*
-
-### 3. Preserving Physical Variance
-Under extreme 80% sensor failure, the baseline model's Standard Deviation Ratio collapses. Our GAN successfully resists this collapse, maintaining a highly realistic physical traffic distribution.
-
-![Variance and STD Ratio Comparison](path/to/your/std_ratio_graph.png)
-*(Replace with your bar chart or line graph comparing the STD Ratio between the Baseline and GAN across the missing data thresholds)*
 
 ---
 
